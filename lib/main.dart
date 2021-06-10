@@ -53,12 +53,11 @@ class TheStateWid extends StatefulWidget {
 class _TheStateWidState extends State<TheStateWid> {
   final _suggestions = <WordPair>[];
   final _favorites = <WordPair>[];
-  final _biggerFont = TextStyle(fontSize: 18.0);
+  final _biggerFont = TextStyle(fontSize: 21.0);
 
   @override
   Widget build(BuildContext context) {
     // final wordPair = WordPair.random();
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Any Name on Top"),

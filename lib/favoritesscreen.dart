@@ -50,13 +50,24 @@ class _FavoritesPageState extends State<FavoritesPage> {
     final _favorites = arguments['favoritesList'] as List<WordPair>;
     final tiles = _clonedfavorites.map((WordPair pair) {
       return ListTile(
-        title: Text(
-          pair.asPascalCase,
-          style: arguments['biggerFont'],
+        title: Transform.translate(
+          child: Text(
+            pair.asPascalCase,
+            // "I have no clue that the thing akjfal;kjfa ",
+            // style: arguments['biggerFont'],
+          ),
+          offset: Offset(-40, -0),
         ),
-        trailing: Icon(
-          _favorites.contains(pair) ? Icons.favorite : Icons.favorite_border,
-          color: _favorites.contains(pair) ? Colors.red : null,
+        // leading: Icon(
+        //   _favorites.contains(pair) ? Icons.favorite : Icons.favorite_border,
+        //   color: _favorites.contains(pair) ? Colors.red : null,
+        // ),
+        leading: Transform.translate(
+          child: Icon(
+            _favorites.contains(pair) ? Icons.favorite : Icons.favorite_border,
+            color: _favorites.contains(pair) ? Colors.red : null,
+          ),
+          offset: Offset(-20, -0),
         ),
         onTap: () {
           setState(() {
